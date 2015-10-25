@@ -11,5 +11,8 @@ ENV PATH /tomcat/bin/:$PATH
 
 EXPOSE 8080
 
-CMD catalina.sh run && tail -f /tomcat/logs/catalina.out
+ADD server.xml /tomcat/conf/
+ADD setenv.sh /tomcat/bin/
+
+CMD catalina.sh run
 
